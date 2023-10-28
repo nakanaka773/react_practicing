@@ -6,12 +6,14 @@ const Api = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("https://zipcloud.ibsnet.co.jp/api/search?zipcode=5140007")
       .then((res) => res.json())
       .then((json) => {
         setData(json)
         setIsLoading(false);
+        
       })
+      
       .catch(() => {
         alert("error")
         setIsLoading(false);
@@ -22,7 +24,7 @@ const Api = () => {
   // ここを変更
   return (
     <>
-      {data === undefined ? "" : <div>{data[0].title}</div>}
+      {data === undefined ? "" : <div>{data.results[0].address1}</div>}
       {isLoading ? <p>ローディング中</p> : <p>終わりだピョーン</p>}
     </>
   );

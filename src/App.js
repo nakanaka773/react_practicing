@@ -9,11 +9,12 @@ import Map from './Components/Hairetsu/Map';
 import Hakusensya from './Components/Hakusensya/Hakusensya';
 import Api from './Components/Api/Api';
 import Dark from './Components/Dark';
+import Yubin from './Components/Api/Yubin';
 
 function App() {
   return (
     <div>
-
+      <Yubin />
     </div>
   );
 }
