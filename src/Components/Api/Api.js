@@ -1,20 +1,31 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-export default function Api() {
-    const [todo,setTodo] = useState([]);
+const Api = () => {
+  const [data, setData] = useState(undefined);
+  const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        async function fetchTodos() {
-          const response = await fetch(`https://jsonplaceholder.typicode.com/todos`);
+  useEffect(() => {
+    setIsLoading(true);
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((json) => {
+        setData(json)
+        setIsLoading(false);
+      })
+      .catch(() => {
+        alert("error")
+        setIsLoading(false);
+      });
+  }, []);
 
-        }
-      
-        fetchTodos();
-      }, []);
 
+  // ここを変更
   return (
-    <div>
-    </div>
-  )
-}
+    <>
+      {data === undefined ? "" : <div>{data[0].title}</div>}
+      {isLoading ? <p>ローディング中</p> : <p>終わりだピョーン</p>}
+    </>
+  );
+};
+
+export default Api;

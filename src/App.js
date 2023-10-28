@@ -13,7 +13,7 @@ import Dark from './Components/Dark';
 function App() {
   return (
     <div>
-      <Dark />
+
     </div>
   );
 }
