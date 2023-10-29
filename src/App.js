@@ -7,7 +7,7 @@ import First from './Components/FramerMotion/First';
 function App() {
   return (
     <div>
-      <First />
+      <Kensaku />
     </div>
   );
 }

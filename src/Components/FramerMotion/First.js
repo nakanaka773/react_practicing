@@ -67,7 +67,7 @@ export default function App() {
       <div>さし</div>
       <div>さし</div>
       <div>さし</div>
-      <div>さし</div>
+      <div  className="sticky">さし</div>
       <div>さし</div>
       <div>さし</div>
       <div>さし</div>
